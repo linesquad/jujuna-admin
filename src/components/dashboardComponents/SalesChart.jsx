@@ -2,16 +2,16 @@ import { Bar, BarChart, Legend, Tooltip, XAxis, YAxis } from "recharts";
 
 function SalesChart() {
   const data = [
-    { name: "Jan", pv: 45, amt: 2400 },
-    { name: "Fab", pv: 60, amt: 2210 },
-    { name: "Mar", pv: 100, amt: 2290 },
-    { name: "Apr", pv: 66, amt: 2000 },
-    { name: "May", pv: 78, amt: 2181 },
-    { name: "Jun", pv: 22, amt: 2500 },
+    { name: "Jan", unitsSold: 45, totalTransaction: 2400 },
+    { name: "Fab", unitsSold: 60, totalTransaction: 2210 },
+    { name: "Mar", unitsSold: 100, totalTransaction: 2290 },
+    { name: "Apr", unitsSold: 66, totalTransaction: 2000 },
+    { name: "May", unitsSold: 78, totalTransaction: 2181 },
+    { name: "Jun", unitsSold: 22, totalTransaction: 2500 },
   ];
 
   return (
-    <div className="bg-[#fff] rounded-[15px] w-[450px] h-[350px]">
+    <div className="bg-[#fff] rounded-[15px] w-[450px] h-[350px] border-[3px] border-purple-300">
       <BarChart
         width={450}
         height={300}
@@ -28,8 +28,8 @@ function SalesChart() {
         <YAxis yAxisId="right" orientation="right" stroke="#82ca9d" />
         <Tooltip />
         <Legend />
-        <Bar yAxisId="left" dataKey="pv" fill="#1c7ed6" />
-        <Bar yAxisId="right" dataKey="amt" fill="#8884d8" />
+        <Bar yAxisId="left" dataKey="unitsSold" fill="#1c7ed6" />
+        <Bar yAxisId="right" dataKey="totalTransaction" fill="#8884d8" />
       </BarChart>
     </div>
   );

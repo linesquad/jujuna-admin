@@ -9,7 +9,7 @@ function PieDashboardChart() {
   ];
 
   return (
-    <div className="py-[20px] pl-[20px] pr-[50px] w-[450px] h-[350px] bg-[#fff] flex items-center gap-[4px] rounded-[15px]">
+    <div className="py-[20px] pl-[20px] pr-[50px] w-[450px] h-[350px] bg-[#fff] flex items-center gap-[4px] rounded-[15px] border-[3px] border-purple-300">
       <PieChart width={300} height={300}>
         <Pie
           data={data}
