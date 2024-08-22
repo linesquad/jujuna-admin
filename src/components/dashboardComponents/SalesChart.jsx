@@ -11,7 +11,7 @@ function SalesChart() {
   ];
 
   return (
-    <div className="bg-[#fff] rounded-[15px] w-[450px] h-[350px]">
+    <div className="w-full bg-[#fff] rounded-[15px] w-[450px] h-[350px]">
       <BarChart
         width={450}
         height={300}

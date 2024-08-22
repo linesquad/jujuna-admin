@@ -20,10 +20,12 @@ function Dashboard() {
         </div>
         <Visitors />
         <Customers />
-      </div>
-      <div className="mt-[30px] flex items-center gap-[30px]">
-        <PieDashboardChart />
-        <SalesChart />
+        <div className="col-span-2">
+          <PieDashboardChart />
+        </div>
+        <div className="col-span-2">
+          <SalesChart />
+        </div>
       </div>
     </div>
   );
