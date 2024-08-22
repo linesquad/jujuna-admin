@@ -5,7 +5,7 @@ import Visitors from "../components/dashboardComponents/Visitors";
 
 function Dashboard() {
   return (
-    <div className="w-full text-purple-800">
+    <div className="text-purple-800">
       <h1 className="text-2xl">Dashboard</h1>
       <p className="mt-2 my-8">Welcome to the Jujuna’s admin dashboard</p>
       <div className="grid grid-cols-4 gap-x-6 gap-y-8">
