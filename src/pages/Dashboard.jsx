@@ -1,4 +1,6 @@
 import Customers from "../components/dashboardComponents/Customers";
+import PieDashboardChart from "../components/dashboardComponents/PieDashboardChart";
+import SalesChart from "../components/dashboardComponents/SalesChart";
 import TodoList from "../components/dashboardComponents/TodoList";
 import TopSection from "../components/dashboardComponents/TopSection";
 import Visitors from "../components/dashboardComponents/Visitors";
@@ -18,6 +20,10 @@ function Dashboard() {
         </div>
         <Visitors />
         <Customers />
+      </div>
+      <div className="mt-[30px] flex items-center gap-[30px]">
+        <PieDashboardChart />
+        <SalesChart />
       </div>
     </div>
   );
