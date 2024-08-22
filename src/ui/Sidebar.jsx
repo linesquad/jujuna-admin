@@ -10,10 +10,15 @@ import { FaSignOutAlt } from "react-icons/fa";
 import { FaMoon } from "react-icons/fa";
 import { FaSun } from "react-icons/fa";
 import Logo from "../components/Logo";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Sidebar() {
-  const [activePageId, setActivePageId] = useState("1");
+  const [activePageId, setActivePageId] = useState(() => {
+    const savedValue = localStorage.getItem("activePageId");
+    const initialValue = JSON.parse(savedValue);
+    return initialValue || "1";
+  });
+
   const sidebarItems = [
     { id: "1", name: "Dashboard", icon: FaHome, path: "/dashboard" },
     { id: "2", name: "Emails", icon: FaEnvelope, path: "/emails" },
@@ -23,6 +28,10 @@ function Sidebar() {
     { id: "6", name: "Contacts", icon: FaUser, path: "/contacts" },
     { id: "7", name: "Settings", icon: FaCog, path: "/settings" },
   ];
+
+  useEffect(() => {
+    localStorage.setItem("activePageId", JSON.stringify(activePageId));
+  }, [activePageId]);
 
   return (
     <div className="w-[223px] h-[870px] bg-[#fff] rounded-[15px] pt-[27px] pb-[22px] pl-[20px]">
