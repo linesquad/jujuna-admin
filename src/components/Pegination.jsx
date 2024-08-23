@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import leftVector from "/images/vectorLeft.svg";
 import rightArrow from "/images/vectorRight.svg";

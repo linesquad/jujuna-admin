@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { BsThreeDots } from "react-icons/bs";
 import { useTable } from "react-table";
 
