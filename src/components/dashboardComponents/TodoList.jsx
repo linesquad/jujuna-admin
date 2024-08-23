@@ -5,6 +5,9 @@ export default function TodoList() {
     { id: 1, text: "Call Influencers For Barters", completed: true },
     { id: 2, text: "Meetin New Couriers", completed: false },
     { id: 3, text: "Meeting Restaurant’s Owners", completed: false },
+    { id: 4, text: "Call Influencers For Barters", completed: true },
+    { id: 5, text: "Meetin New Couriers", completed: false },
+    { id: 6, text: "Meeting Restaurant’s Owners", completed: false },
   ]);
 
   const toggleTaskCompletion = (id) => {
@@ -15,7 +18,7 @@ export default function TodoList() {
     );
   };
   return (
-    <div className="bg-white border-[3px] border-purple-300 rounded-xl p-4 h-full">
+    <div className="overflow-y-auto bg-white border-[3px] border-purple-300 rounded-xl p-4 max-h-[222px]">
       <h2 className="mb-4">To Do List</h2>
       <ul>
         {tasks.map((task) => (

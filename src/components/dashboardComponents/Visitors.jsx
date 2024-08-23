@@ -73,7 +73,7 @@ const Visitors = () => {
   };
 
   return (
-    <div className="bg-white border-[3px] border-purple-300 rounded-xl p-4 h-full">
+    <div className="bg-white border-[3px] border-purple-300 rounded-xl p-[13px] h-full">
       <h2 className="mb-4">Visitors</h2>
       <div className="w-full h-32">
         <Bar data={data} options={options} />
