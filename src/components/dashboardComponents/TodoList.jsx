@@ -18,7 +18,7 @@ export default function TodoList() {
     );
   };
   return (
-    <div className="overflow-y-auto bg-white border-[3px] border-purple-300 rounded-xl p-4 max-h-[222px]">
+    <div className="h-full overflow-y-auto bg-white border-[3px] border-purple-300 rounded-xl p-4 max-h-[222px]">
       <h2 className="mb-4">To Do List</h2>
       <ul>
         {tasks.map((task) => (
