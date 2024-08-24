@@ -1,6 +1,6 @@
 import { FaSearch } from "react-icons/fa";
 
-function ProductsHeader({ type }) {
+function ProductsHeader({ type, searchItems, setSearchItems }) {
   return (
     <div className="flex items-center justify-between">
       <div className="text-[14px] text-[#613994] flex items-center gap-[16px] py-[14px] px-[32px] border-[1px] border-[#BB8DF580] w-[176px] rounded-[15px]">
@@ -14,6 +14,8 @@ function ProductsHeader({ type }) {
           type="text"
           placeholder={`Search ${type}`}
           className="border-none outline-none"
+          value={searchItems}
+          onChange={(e) => setSearchItems(e.target.value)}
         />
       </div>
     </div>
