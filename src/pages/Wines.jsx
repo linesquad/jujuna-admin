@@ -12,7 +12,7 @@ function Wines() {
   );
 
   return (
-    <div className="w-[900px] bg-[#fff] pt-[53px] px-[20px]">
+    <div className="w-[900px] bg-[#fff] rounded-[15px] pt-[53px] px-[20px]">
       <ProductsHeader
         type="Wine"
         searchItems={searchWines}
