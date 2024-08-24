@@ -5,20 +5,13 @@ import { FaCocktail } from "react-icons/fa";
 import { FaWineGlassAlt } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { FaCog } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FaSignOutAlt } from "react-icons/fa";
 import { FaMoon } from "react-icons/fa";
 import { FaSun } from "react-icons/fa";
 import Logo from "../components/Logo";
-import { useEffect, useState } from "react";
 
 function Sidebar() {
-  const [activePageId, setActivePageId] = useState(() => {
-    const savedValue = localStorage.getItem("activePageId");
-    const initialValue = JSON.parse(savedValue);
-    return initialValue || "1";
-  });
-
   const sidebarItems = [
     { id: "1", name: "Dashboard", icon: FaHome, path: "/dashboard" },
     { id: "2", name: "Emails", icon: FaEnvelope, path: "/emails" },
@@ -28,10 +21,6 @@ function Sidebar() {
     { id: "6", name: "Contacts", icon: FaUser, path: "/contacts" },
     { id: "7", name: "Settings", icon: FaCog, path: "/settings" },
   ];
-
-  useEffect(() => {
-    localStorage.setItem("activePageId", JSON.stringify(activePageId));
-  }, [activePageId]);
 
   return (
     <div className="w-[223px] h-[870px] bg-[#fff] rounded-[15px] pt-[27px] pb-[22px] pl-[20px]">
@@ -44,28 +33,28 @@ function Sidebar() {
           <div className="mt-[46px] flex flex-col gap-[12px]">
             {sidebarItems.map((item) => {
               return (
-                <Link key={item.id} to={item.path}>
-                  <div
-                    className={`w-[150px] h-[28px] px-[14px] py-[10px] flex items-center rounded-[15px] gap-[16px] ${
-                      activePageId === item.id ? "bg-[#613994]" : ""
-                    }`}
-                    onClick={() => setActivePageId(item.id)}
-                  >
-                    <item.icon
-                      size={20}
-                      color={`${activePageId === item.id ? "#fff" : "#613994"}`}
-                    />
-                    <p
-                      className={`${
-                        activePageId === item.id
-                          ? "text-[#fff]"
-                          : "text-[#613994]"
-                      }`}
+                <NavLink
+                  key={item.id}
+                  to={item.path}
+                  className={({ isActive }) =>
+                    `${isActive ? "bg-[#613994]" : ""} w-[170px] rounded-[15px]`
+                  }
+                >
+                  {({ isActive }) => (
+                    <div
+                      className={`w-[150px] h-[28px] px-[14px] py-[10px] flex items-center rounded-[15px] gap-[16px]`}
                     >
-                      {item.name}
-                    </p>
-                  </div>
-                </Link>
+                      <item.icon size={20} color={isActive ? "#fff" : "#000"} />
+                      <p
+                        className={`${
+                          isActive ? "text-[#fff]" : "text-[#000]"
+                        }`}
+                      >
+                        {item.name}
+                      </p>
+                    </div>
+                  )}
+                </NavLink>
               );
             })}
             <div className="`w-[150px] h-[28px] px-[14px] py-[10px] flex items-center rounded-[15px] gap-[16px]">
