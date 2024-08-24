@@ -1,20 +1,19 @@
-import cocktail from "/images/cocktail.jfif";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import { FaEllipsisH } from "react-icons/fa";
 import ProgressBar from "./ProgressBar";
 
-function SingleProduct() {
+function SingleProduct({ item }) {
   return (
     <div className="flex">
       <div className="flex items-center gap-[20px] w-[300px] border-y-[1px] border-r-[1px] border-[#BB8DF580]">
         <img
-          src={cocktail}
+          src={item?.image}
           alt="cocktail"
           className="w-[100px] h-[100px] object-cover"
         />
         <div className="flex flex-col gap-[24px] text-[18px]">
-          <p>Cocktail</p>
-          <p className="text-[#848282]">Price</p>
+          <p>{item?.name.en}</p>
+          <p className="text-[#848282]">{item?.price} gel</p>
         </div>
       </div>
 
