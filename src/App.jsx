@@ -7,6 +7,7 @@ import Cocktails from "./pages/Cocktails";
 import Wines from "./pages/Wines";
 import Contacts from "./pages/Contacts";
 import Settings from "./pages/Settings";
+import ContactsLayout from "./pages/ContactsLayout";
 
 function App() {
   return (
@@ -19,8 +20,10 @@ function App() {
           <Route path="/orders" element={<Orders />} />
           <Route path="/cocktails" element={<Cocktails />} />
           <Route path="/wines" element={<Wines />} />
-          <Route path="/contacts" element={<Contacts />} />
           <Route path="/settings" element={<Settings />} />
+          <Route element={<ContactsLayout />}>
+            <Route path="/contacts" element={<Contacts />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
