@@ -26,11 +26,7 @@ export default function SingleOrder({ order }) {
       </div>
       <div>{order.price}</div>
       <div>{order.customer}</div>
-      <div className="flex justify-center">
-        <button className="cursor-pointer">
-          <BsThreeDots className="text-gray-500 w-6 h-6" />
-        </button>
-      </div>
+      <BsThreeDots className="text-gray-500 w-6 h-6 cursor-pointer" />
     </div>
   );
 }
