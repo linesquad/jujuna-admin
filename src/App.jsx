@@ -22,7 +22,8 @@ function App() {
           <Route path="/wines" element={<Wines />} />
           <Route path="/settings" element={<Settings />} />
           <Route element={<ContactsLayout />}>
-            <Route path="/contacts" element={<Contacts />} />
+            <Route path="/contacts" element={<Navigate to="/contacts/1" />} />
+            <Route path="/contacts/:id" element={<Contacts />} />
           </Route>
         </Route>
       </Routes>
